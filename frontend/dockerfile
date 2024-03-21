@@ -1,0 +1,11 @@
+FROM node:hydrogen-slim
+
+RUN corepack enable
+
+COPY . /frontend/
+WORKDIR /frontend/
+
+RUN pnpm install --frozen-lockfile
+RUN pnpm build
+
+CMD ["pnpm", "start"]
