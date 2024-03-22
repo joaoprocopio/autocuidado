@@ -5,7 +5,10 @@ on:
     branches:
       - "main"
     paths:
-      - "frontend/**"
+      - "frontend/**/*.c?jsx?"
+      - "frontend/**/*.c?tsx?"
+      - "frontend/**/*.json"
+      - "frontend/**/*.css"
   workflow_dispatch:
 
 defaults:
