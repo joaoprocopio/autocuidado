@@ -9,6 +9,7 @@ on:
 defaults:
   run:
     working-directory: "./frontend"
+    shell: "sh"
 
 jobs:
   build:
@@ -25,5 +26,6 @@ jobs:
         with:
           cache: "pnpm"
           cache-dependency-path: "./frontend/pnpm-lock.yaml"
+          node-version-file: "./frontend/.nvmrc"
 
       - run: "pnpm install"
