@@ -2,9 +2,9 @@ name: "frontend"
 
 on:
   push:
-    branches: ["main"]
-    paths:
-      - "./frontend/**"
+    branches:
+      - "main"
+  workflow_dispatch:
 
 defaults:
   run:
