@@ -12,8 +12,7 @@ defaults:
     shell: bash
 
 env:
-  BASE_IMAGE: ${{ secrets.ACR_REGISTRY }}/frontend
-  TEST_IMAGE: ${{ env.BASE_IMAGE }}:test
+  TEST_IMAGE: ${{ secrets.ACR_REGISTRY }}/frontend:test
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
