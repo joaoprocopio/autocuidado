@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - "main"
-    # paths:
-    #   - "frontend/**/*.c?jsx?"
-    #   - "frontend/**/*.c?tsx?"
-    #   - "frontend/**/*.json"
-    #   - "frontend/**/*.css"
+    paths:
+      - "frontend/**/*.c?jsx?"
+      - "frontend/**/*.c?tsx?"
+      - "frontend/**/*.json"
+      - "frontend/**/*.css"
   workflow_dispatch:
 
 defaults:
@@ -46,8 +46,8 @@ jobs:
       - name: "build"
         uses: "docker/build-push-action@v5"
         with:
-          push: true
-          pull: true
+          push: false
+          pull: false
           load: true
           target: "base"
           tags: "${{ env.TEST_IMAGE }}"
