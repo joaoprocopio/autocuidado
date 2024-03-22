@@ -1,13 +1,12 @@
 FROM node:hydrogen-slim AS base
 
+WORKDIR /frontend
 RUN corepack enable
-COPY package.json pnpm-lock.yaml /frontend/
-WORKDIR /frontend/
+COPY . .
 RUN pnpm install --frozen-lockfile
 
 FROM base as build
 
-COPY . /frontend/
 RUN pnpm build
 
 CMD ["pnpm", "start"]
