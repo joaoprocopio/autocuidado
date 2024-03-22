@@ -1,12 +1,15 @@
-FROM node:hydrogen-slim AS base
+FROM node:iron-slim AS base
 
 WORKDIR /frontend
-RUN corepack enable
+
 COPY . .
-RUN pnpm install --frozen-lockfile
+
+RUN npm ci && \
+    npm cache clean --force && \
+    npm cache verify
 
 FROM base as build
 
-RUN pnpm build
+RUN npm run build
 
-CMD ["pnpm", "start"]
+CMD ["npm", "run", "start"]

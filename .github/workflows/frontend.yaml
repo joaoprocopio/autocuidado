@@ -59,4 +59,4 @@ jobs:
           target: base
           tags: ${{ env.TEST_IMAGE }}
           context: ./frontend
-      - run: docker run --rm ${{ env.TEST_IMAGE }} pnpm lint
+      - run: docker run --rm ${{ env.TEST_IMAGE }} npm run lint
