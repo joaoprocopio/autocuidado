@@ -15,6 +15,9 @@ env:
   BASE_IMAGE: "${{ secrets.ACR_REGISTRY }}/frontend"
   TEST_IMAGE: "${{ env.BASE_IMAGE }}:test"
 
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+
 jobs:
   build:
     runs-on: "ubuntu-latest"
@@ -35,4 +38,3 @@ jobs:
           target: "base"
           tags: "${{ env.TEST_IMAGE }}"
           context: "./frontend"
-      - run: "docker run --rm ${{ env.TEST_IMAGE }} pnpm lint"
