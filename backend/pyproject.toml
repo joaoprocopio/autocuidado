@@ -3,7 +3,6 @@ name = "vivaboavista"
 version = "0.0.0"
 description = ""
 authors = ["joaoprocopio <joaovitorcprocopio@gmail.com>"]
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
