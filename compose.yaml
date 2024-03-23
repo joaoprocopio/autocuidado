@@ -1,13 +1,34 @@
 services:
+  database:
+    image: postgres:16-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d postgres -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    restart: on-failure
+
   backend:
     build:
       context: backend
+    environment:
+      DJANGO_PG_HOST: database
     ports:
       - 8000:8000
     command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./backend:/backend
       - venv:/backend/.venv
+    restart: on-failure
+
   frontend:
     build:
       context: frontend
@@ -17,7 +38,9 @@ services:
     volumes:
       - ./frontend:/frontend
       - node_modules:/frontend/node_modules
+    restart: on-failure
 
 volumes:
   venv:
   node_modules:
+  postgres:

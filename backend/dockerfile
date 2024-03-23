@@ -10,6 +10,12 @@ ENV PYTHONUNBUFFERED=1 \
 
 COPY . .
 
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y \
+    build-essential \
+    libpq-dev \
+    python3-dev
+
 RUN pip install poetry && \
     poetry install --no-ansi --no-interaction
 
