@@ -4,7 +4,7 @@ import { Button } from "~/components/ui/button"
 
 export default function Index() {
     return (
-        <Button variant="secondary" asChild>
+        <Button variant="destructive" asChild>
             <Link to="https://remix.run" target="_blank" rel="noreferrer">
                 Welcome to Remix
             </Link>
