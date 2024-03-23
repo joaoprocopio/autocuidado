@@ -5,8 +5,9 @@ services:
     ports:
       - 8000:8000
     command: python manage.py runserver 0.0.0.0:8000
-    # volumes:
-    #   - ./backend:/backend
+    volumes:
+      - ./backend:/backend
+      - venv:/backend/.venv
   frontend:
     build:
       context: frontend
@@ -18,4 +19,5 @@ services:
       - node_modules:/frontend/node_modules
 
 volumes:
+  venv:
   node_modules:
