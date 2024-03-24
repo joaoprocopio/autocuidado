@@ -1,5 +1,5 @@
 services:
-  database:
+  postgres:
     image: postgres:16-alpine
     ports:
       - 5432:5432
@@ -16,11 +16,11 @@ services:
       - postgres:/var/lib/postgresql/data
     restart: on-failure
 
-  backend:
+  django:
     build:
       context: backend
     environment:
-      DJANGO_PG_HOST: database
+      DJANGO_PG_HOST: postgres
     ports:
       - 8000:8000
     command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
@@ -29,7 +29,7 @@ services:
       - venv:/backend/.venv
     restart: on-failure
 
-  frontend:
+  remix:
     build:
       context: frontend
     ports:

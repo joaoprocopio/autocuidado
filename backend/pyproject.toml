@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vivaboavista"
-version = "0.0.0"
+version = "1.0.0"
 description = ""
 authors = ["joaoprocopio <joaovitorcprocopio@gmail.com>"]
 
@@ -9,6 +9,7 @@ python = "^3.12"
 django = "^5.0.3"
 python-decouple = "^3.8"
 psycopg2 = "^2.9.9"
+django-ninja = "^1.1.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.4"

@@ -12,7 +12,7 @@ DEBUG = config("DJANGO_DEBUG", default=True, cast=bool)
 ALLOWED_HOSTS = ["localhost", "0.0.0.0"]
 
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -20,6 +20,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+LOCAL_APPS = [
+    "core",
+]
+
+INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
