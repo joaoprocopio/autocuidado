@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,remix
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,remix
+# Created by https://www.toptal.com/developers/gitignore/api/node
+# Edit at https://www.toptal.com/developers/gitignore?templates=node
 
 ### Node ###
 # Logs
@@ -141,10 +141,4 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-### Remix ###
-node_modules
-/.cache
-/build
-/public/build
-
-# End of https://www.toptal.com/developers/gitignore/api/node,remix
+# End of https://www.toptal.com/developers/gitignore/api/node
