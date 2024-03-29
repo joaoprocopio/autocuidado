@@ -26,7 +26,7 @@ module.exports = {
     overrides: [
         // React
         {
-            files: ["**/*.{js,jsx,ts,tsx}"],
+            files: "**/*.{j,t}s?(x)",
             plugins: ["react", "jsx-a11y"],
             extends: [
                 "plugin:react/recommended",
@@ -51,7 +51,7 @@ module.exports = {
 
         // Typescript
         {
-            files: ["**/*.{ts,tsx}"],
+            files: "**/*.ts?(x)",
             plugins: ["@typescript-eslint", "import"],
             parser: "@typescript-eslint/parser",
             settings: {
@@ -74,7 +74,7 @@ module.exports = {
 
         // Node
         {
-            files: [".eslintrc.cjs"],
+            files: "*.{cj,t}s",
             env: {
                 node: true,
             },
