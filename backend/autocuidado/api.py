@@ -2,7 +2,7 @@ from core.views import router as core_router
 from ninja import NinjaAPI
 
 api = NinjaAPI(
-    title="vivaboavista",
+    title="autocuidado",
 )
 
 

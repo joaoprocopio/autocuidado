@@ -38,7 +38,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "vivaboavista.urls"
+ROOT_URLCONF = "autocuidado.urls"
 
 TEMPLATES = [
     {
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "vivaboavista.wsgi.application"
+WSGI_APPLICATION = "autocuidado.wsgi.application"
 
 
 DATABASES = {
